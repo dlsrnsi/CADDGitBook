@@ -45,7 +45,10 @@ BLM은 각각 단백질과 약물마다 모델을 만들면서도\(local\), 기�
 
 ## BLM 기반의 모델들.
 
-어찌되었든, BLM은 약물-표적 상호작용 예측모델에 있어서 중요한 마일스톤 논문임에는 틀림 없다. BLM이후로 BLM의 약점들을 보완한 모델들이 많이 나왔다.
+어찌되었든, BLM은 약물-표적 상호작용 예측모델에 있어서 중요한 마일스톤 논문임에는 틀림 없다. BLM이후로 BLM의 약점들을 보완한 모델들이 많이 나왔다. BLM을 기반으로 한 모델이 꽤 많음으로, 대표적인 모델 몇 개만 소개하도록 한다.
+
+* [LaplRLS \(2010\)](laprls-and-netlaprls.md)
+* [Gaussian Interaction Profile \(GIP, 2011\)](gaussian-interaction-profile-gip.md)
 
 ## Reference
 

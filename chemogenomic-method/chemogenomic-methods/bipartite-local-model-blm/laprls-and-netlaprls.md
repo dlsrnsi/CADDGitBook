@@ -1,6 +1,8 @@
 # LapRLS and NetLapRLS
 
-LapRLS는 BLM에 두가지 요소를 추가하였다. 
+LapRLS는 [BLM](./)에 두가지 요소를 추가하였다. Network similarity와 Larplace regularization이다.
+
+## Network Similarity
 
 ![&#xC57D;&#xBB3C;-&#xB2E8;&#xBC31;&#xC9C8; &#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC608;&#xC2DC;. &#xCD9C;&#xCC98;:https://bmcsystbiol.biomedcentral.com/articles/10.1186/1752-0509-4-S2-S6](../../../.gitbook/assets/dti_network.png)
 
@@ -51,7 +53,9 @@ $$
 
 가 될 것이다. \( $$||\cdot ||_F^2$$ 은 [Frobenious Norm](https://en.wikipedia.org/wiki/Matrix_norm)인데 그냥 정답을 잘 맞추면 낮춰지는 loss라고 생각하자.\)
 
-여기에 Regularization을 추가하여주는데 다음과 같은 텀을 추가해준다.
+## Larplace Regularization
+
+위의 loss텀에 Regularization을 추가하여주는데 다음과 같은 텀을 추가해준다.
 
 $$
 \beta_d Trace(F_d^TL_dF_d)=\beta_d Trace(\alpha^T_dW_dL_dW_d\alpha_d)
