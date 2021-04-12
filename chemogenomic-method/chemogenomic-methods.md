@@ -36,3 +36,7 @@ Chemogenomic method라는 개념을 처음으로 제시한 [_Yamanishi et al._](
 
 이러한 상황은 일반적으로 machine learning 모델에서 성능 하락 및 오버피팅 문제를 일으킨다. 그렇다면 이런 문제를 어떻게 해결할 수 있을까?
 
+## 참조논문
+
+1. Yamanishi, Yoshihiro, et al. "[Prediction of drug–target interaction networks from the integration of chemical and genomic spaces.](https://academic.oup.com/bioinformatics/article/24/13/i232/231871)" Bioinformatics 24.13 \(2008\): i232-i240.
+
