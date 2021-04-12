@@ -16,7 +16,7 @@ $$
 
 그림으로 표현하면 다음과 같다.
 
-![&#xCD9C;&#xCC98;: https://academic.oup.com/bioinformatics/article/24/13/i232/231871](../.gitbook/assets/pharmacological_space-1024x456.jpeg)
+![&#xCD9C;&#xCC98;: https://academic.oup.com/bioinformatics/article/24/13/i232/231871](../../.gitbook/assets/pharmacological_space-1024x456.jpeg)
 
 약물과 단백질이 각각 feature로 변환이 되어 각각 chemical space와 genomic space상에 존재하게 되고, 이를 pharmacological space상으로 매핑함수 \( $$f_c, f_g$$\) 를 이용하여 Pharmacological space상의 DTI쌍으로 표현하는 것을 보여주고 있다. __이렇게 Pharmacological space로 매핑한 후에는 여러 분류기법 \(RF, SVM, KNN 등등\)을 이용하여 상호작용하는 약물-단백질쌍을 학습하고 예측할 수 있게 된다.
 
@@ -30,7 +30,7 @@ Chemogenomic method라는 개념을 처음으로 제시한 [_Yamanishi et al._](
 
 상호작용하는 약물-단백질 쌍이 분류가 되려면 Pharmacological space가 다음과 같은 형태로 생겼을것이다.
 
-![&#xCD9C;&#xCC98;: https://www.petersincak.com/news/why-i-do-not-believe-in-error-backpropagation/ ](../.gitbook/assets/four-reserach.jpg)
+![&#xCD9C;&#xCC98;: https://www.petersincak.com/news/why-i-do-not-believe-in-error-backpropagation/ ](../../.gitbook/assets/four-reserach.jpg)
 
 여기서 별, 삼각형 등등은 비슷한 서열을 가진 단백질과, 그 단백질과 상호작용하는 약물 쌍이다. 점선으로 표현된 hyperplane이 상호작용하지 않는 약물-단백질쌍과 상호작용하는 단백질쌍을 분류해주는 것을 확인할 수 있다. 또한, 비슷한 단백질-약물쌍들끼리 그룹화가 되어있어서 pharmacological space상에서 분류선이 여러개가 복잡하게 생성 \(Coarse\) 되어있음을 확인할수있다.
 
