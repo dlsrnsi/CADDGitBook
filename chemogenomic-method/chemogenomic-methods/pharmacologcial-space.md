@@ -1,6 +1,6 @@
 # Pharmacologcial Space
 
-Pharmacological Space라는 개념을 처음으로 제시한 [_Yamanishi et al._](https://academic.oup.com/bioinformatics/article/24/13/i232/231871)에서는 다음과 같은 말로 설명을 하며, 약물과 단백질을 각각 유사도 벡터로 표현하고 있다..
+Pharmacological Space라는 개념을 처음으로 제시한 [_Yamanishi et al._](https://academic.oup.com/bioinformatics/article/24/13/i232/231871) __\[1\]에서는 다음과 같은 말로 설명을 하며, 약물과 단백질을 각각 유사도 벡터로 표현하고 있다..
 
 > In the proposed method, chemical space means the chemical structure similarity space of possible chemical compounds, genomic space means the amino acid sequence similarity space of possible proteins and pharmacological space means the interaction space reflecting the drug–target interaction network, where interacting drugs and target proteins are close to each other.
 
@@ -64,6 +64,8 @@ $$
 
 ## Bipartite Graph Learning
 
+### Gaussian Kernel for Graph Structure
+
  위와 같은 Weightewed Profile 방법도 문제점이 있다. 근본적인 문제점은, 유사도 값이 Interaction score를 쉽게 구분할 수 있을만큼 크게 **“매끄럽지”** 못하다는 점이다. _Yamanishi et. al_ 에서는 약물, 타겟 단백질, 상호작용을 통합하는 Bipartite 그래프를 커널화 시키고 Similarity값을 매핑 시킴으로써 해결한다.
 
 ![Bipartite &#xADF8;&#xB798;&#xD504;&#xC758; &#xC608;&#xC2DC;, U&#xB294; &#xC57D;&#xBB3C;, V&#xB294; &#xB2E8;&#xBC31;&#xC9C8;&#xB85C; &#xBCFC; &#xC218; &#xC788;&#xB2E4;. &#xCD9C;&#xCC98;: https://en.wikipedia.org/wiki/Bipartite\_graph ](../../.gitbook/assets/simple-bipartite-graph.svg.png)
@@ -86,6 +88,8 @@ $$
 
 를 Weight vector $$W$$ 를 최적화하여 최소화 하면 될 것이다. 학습은 각각 약물과 타겟 단백질에 대해서 따로 $$W$$ 를 학습한다.
 
+### Pharmacological Vector
+
 새로운 약물에 대한 pharmacological vector는 다음과 같이 계산된다.
 
 $$
@@ -98,6 +102,18 @@ $$
 u_{p_{new}}=\sum_{i=1}^{n_p}S_p(p_{new},p_i)w_{p_i}
 $$
 
+이 pharmacological vector는 무엇을 의미하는 것일까?
+
+위에서 언급하였듯,$$u$$ 는 그래프의 거리에 가우시안 커널을 씌운 고유벡터이고 $$s$$ 는 유사도값이 된다, 따라서 로스함수 $$L$$ 을 통하여
+
+$$
+f_w(s)\rightarrow u
+$$
+
+유사도를 그래프 구조로 변환시키는 $$W$$의 최적값을 학습시킴을 알 수있다. 또한 이 그래프는 약물과 단백질을 모두 포함한 Bipartite 그래프이기 때문에, 약물/단백질 유사도 값을 상호작용인 Pharmacological space에 매핑시키는 역할도 함을 알수 있다.
+
+### Pharmacological Space
+
 Interaction score는 약물의 pharmacological vector와 타겟 단백질의 pharmacological vector의 inner product로 정의 되는데,
 
 $$
@@ -106,12 +122,14 @@ $$
 
 inner product가 크다는 곧 공간상의 거리가 가깝다는 뜻이므로, pharmacological space상에서 상호작용을 하는 약물-표적 단백질쌍이 가까운 공간에 모이도록 학습을 하였다고 생각할 수 있다.
 
-결론적으로, 이렇게 Bipartite graph를 커널화하고 Similarity 그래프에 커널에 매핑 시킴으로써
+결론적으로, 이렇게 Bipartite graph를 커널화하고 유사도 벡터를 커널에 매핑 시킴으로써,
 
-* 약물과 타겟 단백질을 같은 pharmacological space에 매핑하였으며
+* 약물과 단백질을 같은 pharmacological space에 매핑하였으며
 * Pharmacological space에서 상호작용하는 약물과 타겟 단백질이 비슷한 위치를 갖게 함으로써 좀더 “매끄럽고” 판별력이 있는 판별능력을 가질 수 있게되었다.
 
 ## Pharmacolgical Space의 중요성과 한계점
+
+Pharmacological space 기법의 가장 큰 문제점은 결국 단백질과 약물공간이 다르기때문에 heterogeneity가 생길수밖에 없다는 것이다. 이 문제점은 이후 논문들에서 지속적으로 제기되었다 \[2\].
 
 상호작용하는 약물-단백질 쌍이 분류가 되려면 Pharmacological space가 다음과 같은 형태로 생겼을것이다.
 
@@ -124,4 +142,5 @@ inner product가 크다는 곧 공간상의 거리가 가깝다는 뜻이므로,
 ## 참조논문
 
 1. Yamanishi, Yoshihiro, et al. "[Prediction of drug–target interaction networks from the integration of chemical and genomic spaces.](https://academic.oup.com/bioinformatics/article/24/13/i232/231871)" Bioinformatics 24.13 \(2008\): i232-i240.
+2. Bleakley, Kevin, and Yoshihiro Yamanishi. "[Supervised prediction of drug–target interactions using bipartite local models.](https://academic.oup.com/bioinformatics/article/25/18/2397/197654)" Bioinformatics 25.18 \(2009\): 2397-2403.
 

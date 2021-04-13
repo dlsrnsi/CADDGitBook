@@ -2,7 +2,7 @@
 
 전 문서인, [Chemogenomic Methods](../)에서는 Pharmacological space가 굉장이 복잡\(coarse\)한 hyperplane을 형성할 수 있고, 이로 인해서 예측모델의 성능이 하락할 수 있음을 지적한바 있다.
 
-이러한 문제점을 해결하기 위해서 고안된 모델이 Bipartite Local Model \(BLM\)이다. BLM에서는 DTI 쌍을 Bipartite Graph로 표현한다.
+이러한 문제점을 해결하기 위해서 고안된 모델이 Bipartite Local Model \(BLM\)이다. BLM에서는 DTI 쌍을 Bipartite 그래프로 표현하고, 이에 bipartite 그래프라는 구조에 좀더 중점을 준다.
 
 먼저 Bipartite graph에 대해서 알아보자. 
 
