@@ -1,0 +1,2 @@
+# Smith-Waterman algorithm \(SW\)
+
