@@ -81,7 +81,7 @@ $$
 ||Y-W_d\alpha_d||^2_F + \beta_d Trace(\alpha^T_dW_dL_dW_d\alpha_d)
 $$
 
-손실함수를 최소화하기 위하여 파라미터인 $$\alpha_d$$ 로 미분을 하고 되면 그라디언트가 최소화되는 값을 찾자
+손실함수를 최소화하기 위하여 파라미터인 $$\alpha_d$$ 로 미분을 하면 그라디언트가 최소화되는 값을 찾자
 
 $$
 d\alpha_dJ(F_d)=-W_d(Y-W_d\alpha_d)+\beta_dW_dL_d\alpha_d=0
