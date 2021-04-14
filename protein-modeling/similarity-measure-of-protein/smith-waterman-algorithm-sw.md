@@ -6,7 +6,7 @@ LCS는 그냥 일반적인 다이나믹 프로그래밍이라고 생각하면 �
 
 ## 알고리즘
 
-먼저 $$(n \times m)$$ 크기를 가진 매트릭스 $$H$$ 를 만든다.
+먼저 $$((n+1) \times (m+1))$$ 크기를 가진 매트릭스 $$H$$ 를 만든다. 0번 인덱스는 Null 문자이다.
 
 ![&#xCD9C;&#xCC98;: https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman\_algorithm](../../.gitbook/assets/smith-waterman-algorithm-example-en.gif)
 

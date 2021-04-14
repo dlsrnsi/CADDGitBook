@@ -21,6 +21,7 @@
 
 ## Compound Modeling
 
+* [Simplified molecular-input line-entry system \(SMILES\)](compound-modeling/simplified-molecular-input-line-entry-system-smiles.md)
 * [Similarity Measure of Compound](compound-modeling/similarity-measure-of-compound/README.md)
   * [Tanimoto Coefficient](compound-modeling/similarity-measure-of-compound/tanimoto-coefficient.md)
 * [Compound Features](compound-modeling/compound-features.md)
