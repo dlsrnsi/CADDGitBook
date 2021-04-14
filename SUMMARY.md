@@ -22,6 +22,8 @@
 ## Compound Modeling
 
 * [Simplified molecular-input line-entry system \(SMILES\)](compound-modeling/simplified-molecular-input-line-entry-system-smiles.md)
+* [Chemical Fingerprints](compound-modeling/chemical-fingerprints/README.md)
+  * [Extended-Connectivity Fingerprints \(ECFP\)](compound-modeling/chemical-fingerprints/extended-connectivity-fingerprints-ecfp.md)
 * [Similarity Measure of Compound](compound-modeling/similarity-measure-of-compound/README.md)
   * [Tanimoto Coefficient](compound-modeling/similarity-measure-of-compound/tanimoto-coefficient.md)
 * [Compound Features](compound-modeling/compound-features.md)
