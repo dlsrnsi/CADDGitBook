@@ -25,7 +25,7 @@ description: Paper List
 
 ### Matrix Factorization
 
-*  [Identification of drug–target interactions via fuzzy bipartite local model \(FBLM, 2019\)](https://link.springer.com/article/10.1007/s00521-019-04569-z)
+* [Predicting drug–target interactions from chemical and genomic kernels using Bayesian matrix factorization \(KBMF2K, 2012\)](https://academic.oup.com/bioinformatics/article/28/18/2304/241817)
 
 ### Graph-based Methods
 

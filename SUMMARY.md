@@ -9,6 +9,8 @@
   * [Bipartite Local Model \(BLM\)](chemogenomic-method/chemogenomic-methods/bipartite-local-model-blm/README.md)
     * [LapRLS and NetLapRLS](chemogenomic-method/chemogenomic-methods/bipartite-local-model-blm/laprls-and-netlaprls.md)
     * [Gaussian Interaction Profile \(GIP\)](chemogenomic-method/chemogenomic-methods/bipartite-local-model-blm/gaussian-interaction-profile-gip.md)
+  * [Matrix Factorization](chemogenomic-method/chemogenomic-methods/matrix-factorization/README.md)
+    * [Kernelized Bayesian matrix factorization with twin kernels \(KBMF2K\)](chemogenomic-method/chemogenomic-methods/matrix-factorization/kernelized-bayesian-matrix-factorization-with-twin-kernels-kbmf2k.md)
   * [Feature-based Models](chemogenomic-method/chemogenomic-methods/feature-based-models.md)
   * [Paper List](chemogenomic-method/chemogenomic-methods/paper-list.md)
 * [Deep Learning Models](chemogenomic-method/deep-learning-models.md)
