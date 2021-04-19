@@ -140,7 +140,7 @@ $$
 p(A_d)=\prod_{s=1}^{R}\mathbb {N}\bigg ( a_{t,s}; K_t G_d\frac {1} {\sigma^2} +0, \big(diag(\lambda_t^s)+\frac {K_dK_d^T} {\sigma^2} \big)^{-1} \bigg)
 $$
 
-이다. 여기서 $$0$$이 포함된 이유는, $$a_{d,s}^i|\lambda_{d,s}^i \sim \mathbb {N}(a_{d,s}^i;0, (\lambda_{d,s}^i)^-1)$$ 로, $$a_{d,s}^i$$ 의 평균이 $$0$$ 이기 때문이다. 또한 분산은 커널의 공분산과 감마분포의 분산의 조화평균이 되게 된다. 여기서 몬테카를로 샘플링을 통해 변분 추론을 하게 되면,
+이다. 여기서 $$0$$이 포함된 이유는, $$a_{d,s}^i|\lambda_{d,s}^i \sim \mathbb {N}(a_{d,s}^i;0, (\lambda_{d,s}^i)^{-1})$$ 로, $$a_{d,s}^i$$ 의 평균이 $$0$$ 이기 때문이다. 또한 분산은 커널의 공분산과 감마분포의 분산의 조화평균이 되게 된다. 여기서 몬테카를로 샘플링을 통해 변분 추론을 하게 되면,
 
 $$
 q(A_d)=\prod_{s=1}^{R}\mathbb {N}\bigg ( a_{t,s}; K_d G_d\frac {{\textstyle \sum} (a_{t,s})} {\sigma^2}, \big(diag(\widetilde {\lambda_t^s})+\frac {K_dK_d^T} {\sigma^2} \big)^{-1} \bigg)

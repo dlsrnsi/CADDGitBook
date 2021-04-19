@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Curriculum Vitae](curriculum-vitae.md)
 
 ## Chemogenomic Method
 
