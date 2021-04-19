@@ -30,3 +30,7 @@
   * [Tanimoto Coefficient](compound-modeling/similarity-measure-of-compound/tanimoto-coefficient.md)
 * [Compound Features](compound-modeling/compound-features.md)
 
+## Machine Learning
+
+* [Variational Inference](machine-learning/variational-inference.md)
+
