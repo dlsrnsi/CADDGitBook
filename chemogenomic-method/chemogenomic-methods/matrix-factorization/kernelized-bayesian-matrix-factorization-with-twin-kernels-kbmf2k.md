@@ -111,8 +111,10 @@ $$
 로 표현될 수 있다. 그런데 $$\frac {\vartheta A_d (x)} {\vartheta \Lambda_d(x)}$$ 은 감마 정규 분포에서 감마 분포를 제외한 것이라서 정규분포이고, $$\frac {\vartheta \Lambda_d(x)} {\vartheta x}$$ , 즉 감마분포의 [도함수는 감마분포이다](https://towardsdatascience.com/gamma-distribution-intuition-derivation-and-examples-55f407423840). 따라서 $$\frac {\vartheta} {\vartheta \tau} A_d$$ 는 감마 정규분포 그자체이다. 따라서 아래와 같은 확률을 최대화 하도록 Stochastic하게 파라미터를 줄여나가면 되는 것을 알 수 있는데,
 
 $$
-p(\Lambda_d)= \prod_{i=1} ^{N_d} \prod _{s=1}^{S} \mathbb {G}\bigg(\lambda_{d,s}^i;\alpha_{\lambda}-\frac {1} {2}, (\frac {1} {\beta } + \frac {\lambda (x-u)^2} {2} \bigg )
+p(\Lambda_d)= \prod_{i=1} ^{N_d} \prod _{s=1}^{S} \mathbb {G}\bigg(\lambda_{d,s}^i;\alpha_{\lambda}+\frac {1} {2}, (\frac {1} {\beta } + \frac {\lambda (x-u)^2} {2} \bigg )
 $$
+
+$$\alpha_{\lambda} -1 +\frac {1} {2} +1 = \alpha_{\lambda} + \frac {1} {2}$$ 이 되게 된다. \(유도해보기 바란다\)
 
 $$x$$ 를 몬테카를로 샘플링을 통하여 샘플링하여 변분추론하게 되면,
 
