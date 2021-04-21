@@ -4,7 +4,7 @@
 
 Ingoo Lee
 
-Ph.D candidate in Gwangju Institute of Sicence and Technology
+Ph.D candidate in Bioinformatics and Intelligence Laboratory \(BIIL\), Gwangju Institute of Sicence and Technology
 
 ## Education
 
