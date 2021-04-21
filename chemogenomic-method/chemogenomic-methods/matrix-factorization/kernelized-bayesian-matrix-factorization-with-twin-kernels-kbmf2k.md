@@ -165,7 +165,7 @@ $$
 이고 여기에 변분추론을 하게 되면 다음과 같이 될 것이다.
 
 $$
-p(G_d) = \prod_{i=1}^{N_d}\mathbb {N}\bigg( g_{d,i}; {\textstyle \sum} (g_{d,i}) \big( \widetilde {G_d} \widetilde {(f^i)^T} + \frac {\widetilde {A_d^T}k_{d,i}} {\sigma_g^2} \big ), \big (\frac {I} {\sigma_g^2}+\widetilde {G_tG_t^T} \big)^{-1}\bigg)
+p(G_d) = \prod_{i=1}^{N_d}\mathbb {N}\bigg( g_{d,i}; {\textstyle \sum} (g_{d,i}) \big( \widetilde {G_t} \widetilde {(f^i)^T} + \frac {\widetilde {A_d^T}k_{d,i}} {\sigma_g^2} \big ), \big (\frac {I} {\sigma_g^2}+\widetilde {G_tG_t^T} \big)^{-1}\bigg)
 $$
 
 위와 마찬가지로, 샘플링된 $$\widetilde {a_{d,s}^i},\widetilde {a_{t,s}^i}$$ 를 기반으로 하여 $$\widetilde {G_d}, \widetilde {(f^i)^T}, \widetilde {G_t}$$ 를 추정할 수 있다.
