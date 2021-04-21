@@ -93,13 +93,13 @@ Stochastic Variational Inference 는 그라디언트를 줄이는 방식으로 �
 
 먼저 $$\Lambda_d,\Lambda_t$$ 를 살펴보자. $$A_d, A_t$$ 는 분산의 역인 precision을 [감마분포](https://en.wikipedia.org/wiki/Gamma_distribution)로부터 추출하는 [Normal gamma distribution](https://en.wikipedia.org/wiki/Normal-gamma_distribution)이다.
 
-감마 정규 분포에서는 정규분포의 분산의 역인 precision이 감마분포 $$\tau$$에 파라미터인 $$\lambda$$ 를 곱해준 것으로 나타낸다. \($$\frac {1} {\sigma^2}=\lambda\tau$$ \)
+감마 정규 분포에서는 정규분포의 분산의 역인 precision이 감마분포 $$\tau$$에 파라미터인 $$\lambda$$ 를 곱해준 것으로 나타낸다. \($$\frac {1} {\sigma^2}=\lambda\tau$$ \). 그런데 여기선 람다는 1이다
 
 shape와 scale 파라미터 $$\alpha,\beta$$ 를 가진 감마 분포와 정규분포의 곱은 다음과 같이 표현할 수 있다.
 
 $$
 \bigg\{\frac {1} {\beta^\alpha \Gamma(\alpha)}\tau^{\alpha -1}e^{-\frac {\tau} {\beta}} \bigg \} \bigg \{ \frac {
-\sqrt {\lambda}\tau^{\frac {1} {2}}} {\sqrt {2\pi}} e^{\lambda \tau \frac {(x-\mu)^2} {2}}  \bigg \} = \frac {\sqrt {\lambda}} {\beta^\alpha \Gamma(\alpha)\sqrt{2\pi}}\tau^{\alpha -\frac {1} {2}}e^{-\frac {\tau} {\beta}} e^{\lambda \tau \frac {(x-\mu)^2} {2}}
+\tau^{\frac {1} {2}}} {\sqrt {2\pi}} e^{ \tau \frac {(x-\mu)^2} {2}}  \bigg \} = \frac {1} {\beta^\alpha \Gamma(\alpha)\sqrt{2\pi}}\tau^{\alpha -\frac {1} {2}}e^{-\frac {\tau} {\beta}} e^{ \tau \frac {(x-\mu)^2} {2}}
 $$
 
 이 떄, $$A_d,A_t$$ 에대한 그라디언트는 미분의 체인룰에 의하여,
