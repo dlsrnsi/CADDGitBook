@@ -75,9 +75,13 @@ ECFP의 생성과정은 다음과 같다.
 
 ECFP는 PubChem Fingerprint와 함께 가장 많이 쓰이는 Fingerprint로써,  radius보다 작거나 같은 크기의 하부구조들을 어레이 상의 인덱스로 표기한다. 따라서 화합물이 가지고 있는 특정 크기 이하의 모든 하부구조들이 대부분 표현된다는 강력한 강점을 가지고 있다. 또한, 이 이진\(binary\)한 표현을 다양한 길이로 하기 때문에 머신러닝 모델들의 입력으로 아주 좋다. 그래서, 초기 인공신경망 모델들은 ECFP + Random Forest 모델들의 성능을 이기지 못하였다.
 
-이렇게 좋은 ECFP지만 몇몇 문제점을 가지고 있는데,  이는 ECFP의 해싱함수로부터 존재한다. 첫번째는 ECFP 해싱상의 Collision 문제를 들 수 있다. Iteration 상에서 사용하는 해싱함수는 32-bit사이즈를 가지고 있어서 randomly uniform으로 콜리전이 거의 일어나지 않는다곤 하지만, folding단계에서는 보통 512, 1024, 2048같은 길이의 binary 벡터를 사용하게 되므로 folding상에서 collision이 일어날 확률이 높아지게 된다. 다른 화합물이 같은 ECFP를 가질 수 있게 된다.
+이렇게 좋은 ECFP지만 몇몇 문제점을 가지고 있는데,  이는 ECFP의 해싱함수로부터 존재한다. 첫번째는 ECFP 해싱상의 Collision 문제를 들 수 있다. Iteration 상에서 사용하는 해싱함수는 32-bit사이즈를 가지고 있어서 randomly uniform으로 콜리전이 거의 일어나지 않는다곤 하지만, folding단계에서는 보통 512, 1024, 2048같은 길이의 binary 벡터를 사용하게 되므로 folding상에서 collision이 일어날 확률이 높아지게 된다. 경우에 따라서 다른 화합물이 같은 ECFP를 가질 수 있게 된다.
 
 위와 비슷한 이유로써, ECFP로는 원래 화합물을 복원할 수 없다. ECFP 생성과정에서 여러번의 해싱을 거치게 되므로 같은 화합물은 같은 ECFP로 매핑되지만 ECFP를 통해서 원래 화합물을 복원할 수 없는 것이다. 다만 하부구조의 인덱스값을 통하여 huristic하게 어느정도 찾아낼 수 있긴하다.
+
+![&#xCD9C;&#xCC98;: https://en.wikipedia.org/wiki/Fatty\_acid ](../../.gitbook/assets/300px-arachidic_formula_representation.svg.png)
+
+마지막으로, Radius가 겹쳐짐으로써 생기는 중복이 아니라, 같은 하부구조가 계속 반복되는 경우에 같은 id를 여러개 가지게 되므로 Folding과정에서 하나의 인덱스로 매핑되게 된다. 에를 들면, 지방산 같은경우 꼬리의 길이에 상관없이 같은 Fingerprint를 가지게 될것이다.
 
 ## Code
 
@@ -87,7 +91,7 @@ ECFP와 80퍼센트 이상의 correlation을 가지는 RDKit에서의 Morgan/Cir
 from rdkit import Chem
 from rdkit.Chem import AllChem
 m = Chem.MolFromSmiles("Cc1ccccc1") # Mol object 만들기
-fp = AllChem.GetMorganFingerprint(m1, 2, nBits=1024) # 1024길이의 radius 2 핑거프린트 생성
+fp = AllChem.GetMorganFingerprint(m1, 2, nBits=1024) # Mol로부터 1024길이의 radius 2 핑거프린트 생성
 fp_bitvec = AllChem.AllChem.GetMorganFingerprintAsBitVect(m1,2,nBits=1024) # Numpy array로 생성함.
 ```
 
