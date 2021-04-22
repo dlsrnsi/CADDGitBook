@@ -14,7 +14,8 @@
     * [Kernelized Bayesian matrix factorization with twin kernels \(KBMF2K\)](chemogenomic-method/chemogenomic-methods/matrix-factorization/kernelized-bayesian-matrix-factorization-with-twin-kernels-kbmf2k.md)
   * [Feature-based Models](chemogenomic-method/chemogenomic-methods/feature-based-models.md)
   * [Paper List](chemogenomic-method/chemogenomic-methods/paper-list.md)
-* [Deep Learning Models](chemogenomic-method/deep-learning-models.md)
+* [Deep Learning Models](chemogenomic-method/deep-learning-models/README.md)
+  * [Paper List](chemogenomic-method/deep-learning-models/paper-list.md)
 
 ## Protein Modeling
 
