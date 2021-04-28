@@ -30,7 +30,8 @@
   * [Extended-Connectivity Fingerprints \(ECFP\)](compound-modeling/chemical-fingerprints/extended-connectivity-fingerprints-ecfp.md)
 * [Similarity Measure of Compound](compound-modeling/similarity-measure-of-compound/README.md)
   * [Tanimoto Coefficient](compound-modeling/similarity-measure-of-compound/tanimoto-coefficient.md)
-* [Compound Features](compound-modeling/compound-features.md)
+* [Compound Features](compound-modeling/compound-features/README.md)
+  * [Deep Learning](compound-modeling/compound-features/deep-learning.md)
 
 ## Machine Learning
 
