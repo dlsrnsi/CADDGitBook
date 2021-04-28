@@ -21,6 +21,7 @@
 
 * [Similarity Measure of Protein](protein-modeling/similarity-measure-of-protein/README.md)
   * [Smith-Waterman algorithm \(SW\)](protein-modeling/similarity-measure-of-protein/smith-waterman-algorithm-sw.md)
+  * [Basic Local Alignment Search Tool \(BLAST\)](protein-modeling/similarity-measure-of-protein/basic-local-alignment-search-tool-blast.md)
 * [Protein Features](protein-modeling/protein-features.md)
 
 ## Compound Modeling
