@@ -1,14 +1,14 @@
-# Kernelized Bayesian matrix factorization with twin kernels \(KBMF2K\)
+# Kernelized Bayesian matrix factorization with twin kernels (KBMF2K)
 
-Kernelized Baysian matrix factorization with twin kernels \(KBM2K\) 는 [Pharmacological space](../pharmacologcial-space.md) 기법을 Matriax Factorization으로 해석한 논문이다.
+Kernelized Baysian matrix factorization with twin kernels (KBM2K) 는 [Pharmacological space](../pharmacologcial-space.md) 기법을 Matriax Factorization으로 해석한 논문이다.
 
 ## Pharmacological Space and Matrix Factorization
 
 KBMBF모델의 개요는 다음과 같다.
 
-![&#xCD9C;&#xCC98;: &#xBCF8;&#xC778;&#xC81C;&#xC791;](../../../.gitbook/assets/kbmf2k.png)
+![출처: 본인제작](../../../.gitbook/assets/kbmf2k.png)
 
-먼저, Pharmacological space 기법에서 사용한 방법으로 약물과 단백질을 유사도 커널을 사용하여 약물공간과 단백질 공간 $$K_d,K_t $$ 의 벡터로 표현한다.
+먼저, Pharmacological space 기법에서 사용한 방법으로 약물과 단백질을 유사도 커널을 사용하여 약물공간과 단백질 공간 $$K_d,K_t$$ 의 벡터로 표현한다.
 
 그후, 약물과 단백질에 대해서 $$A_d, A_t$$ 인 매핑 함수를 사용하여 약물공간과 단백질 공간에서 Pharmacological space로 매핑한다. 매핑된 Pharmacologcial space상의 약물과 단백질을 $$G_d (d_i), G_t (t_j)$$ 라고 한다.
 
@@ -16,7 +16,7 @@ KBMBF모델의 개요는 다음과 같다.
 
 위에 언급된 과정을 $$N_d,N_t$$ 개의 약물과 단백질에 대해서 한번에 수행하는 것은 Matrix muliplication으로 수행할 수 있다. 반대로 예측값을 두개의 별개의 행렬로 만드는 Matrix factorization으로 표현될 수 있다.
 
-![Matrix multiplication&#xC758; &#xC608;&#xC2DC;. &#xCD9C;&#xCC98;: https://academic.oup.com/bib/article/20/4/1337/4824712](../../../.gitbook/assets/m_bby002f3.png)
+![Matrix multiplication의 예시. 출처: https://academic.oup.com/bib/article/20/4/1337/4824712](../../../.gitbook/assets/m\_bby002f3.png)
 
 $$
 F=G_d^TG_t=(A_d^TK_d)^T(A_t^TK_t)=K_d^TA_dA_t^TK_t
@@ -26,7 +26,7 @@ $$
 
 ## Model and Bayesian Inference
 
-$$A_d,A_t$$ 의 파라미터들을 [감마 분포](https://en.wikipedia.org/wiki/Gamma_distribution)를 사전 확률 분포\(Prior distribution\)으로 가진 사후 확률 분포 \(Posterior distribution\)으로 가정한다. $$A_d,A_t$$ 는 기본적으로 $$\mathbb {N}(0,1)$$ 을 Likelihood로 가지되, 사전 확률 분포로 감마 분포를 [Conjugate piror](https://en.wikipedia.org/wiki/Conjugate_prior)로 가져서 분산의 역인 precision $$\tau$$ 를 감마 분포로부터 샘플링 하는 사후 분포가 된다. 이때 감마 분포의 하이퍼 파라미터 $$\alpha,\beta$$ 는 사용자가 정의해준다.
+$$A_d,A_t$$ 의 파라미터들을 [감마 분포](https://en.wikipedia.org/wiki/Gamma\_distribution)를 사전 확률 분포(Prior distribution)으로 가진 사후 확률 분포 (Posterior distribution)으로 가정한다. $$A_d,A_t$$ 는 기본적으로 $$\mathbb {N}(0,1)$$ 을 Likelihood로 가지되, 사전 확률 분포로 감마 분포를 [Conjugate piror](https://en.wikipedia.org/wiki/Conjugate\_prior)로 가져서 분산의 역인 precision $$\tau$$ 를 감마 분포로부터 샘플링 하는 사후 분포가 된다. 이때 감마 분포의 하이퍼 파라미터 $$\alpha,\beta$$ 는 사용자가 정의해준다.
 
 $$
 \lambda_{d,s}^i \sim \mathbb {G}(\lambda_{d,s}^i;\alpha_{\lambda}, \beta_{\lambda}) 
@@ -49,9 +49,9 @@ $$
 f^i_j|g_{d,i},g_{t,j} \sim \mathbb {N}(f^i_j;g_{d,i}^Tg_{t,j}, 1)
 $$
 
-### Variational Inference \(변분 추론\)
+### Variational Inference (변분 추론)
 
-우리의 목표는 입력값 $$k_{d,i},k_{t,j}$$ 으로부터 $$Y$$ 를 예측하는 확률값을 최대화 하는 것이다. 이 때, $$\Theta: \Lambda_d, \Lambda_t$$ \(사전 분포 세트\)이고 $$\Xi:A_d,A_t,G_d,G_t$$ \(나머지 변수들\)이다.
+우리의 목표는 입력값 $$k_{d,i},k_{t,j}$$ 으로부터 $$Y$$ 를 예측하는 확률값을 최대화 하는 것이다. 이 때, $$\Theta: \Lambda_d, \Lambda_t$$ (사전 분포 세트)이고 $$\Xi:A_d,A_t,G_d,G_t$$ (나머지 변수들)이다.
 
 $$
 \log {\int p(Y|K_d,K_t)}p(\Theta,\Xi)d(\Theta,\Xi)
@@ -69,7 +69,7 @@ $$
 D_{KL}(q(z)||p(z|x)) = \int q(z)\log \frac {q(z)} {p(z|x)} dz = D_{KL}(q(z)||p(z))+\log p(x) - \int q(z)\log p(x|z)dz
 $$
 
-이 되게 된다. \(자세한 내용은 [변분 추론](../../../machine-learning/variational-inference.md) 참조.\)
+이 되게 된다. (자세한 내용은 [변분 추론](../../../machine-learning/variational-inference.md) 참조.)
 
 ### Variational Inference with Monte Carlo Sampling
 
@@ -79,7 +79,7 @@ $$
 D_{KL}(q(z)||p(z)) - \int p(x|z) q(z)dz + \log p(x) = E_{z\sim q(z)}\big [ \log q(z)-\log p(z) - \log(x|z) \big ] + \log p(x)
 $$
 
-이를 몬테 카를로 샘플링 을 통하여 
+이를 몬테 카를로 샘플링 을 통하여&#x20;
 
 $$
 \frac {1} {K} \sum_{i=0}^K \big [ \log q(z_i)-\log p(z_i) - \log(x|z_i) \big ]_{z_i \sim q(z)} + \log p(x)
@@ -87,13 +87,13 @@ $$
 
 $$q(z)$$ 를 추론할 수 있다.
 
-### Stochastic Variational Inference \(SVI\)
+### Stochastic Variational Inference (SVI)
 
 Stochastic Variational Inference 는 그라디언트를 줄이는 방식으로 파라미터를 최소화 함으로써 Variational inference를 수행하는 방법이다.
 
-먼저 $$\Lambda_d,\Lambda_t$$ 를 살펴보자. $$A_d, A_t$$ 는 분산의 역인 precision을 [감마분포](https://en.wikipedia.org/wiki/Gamma_distribution)로부터 추출하는 [Normal gamma distribution](https://en.wikipedia.org/wiki/Normal-gamma_distribution)이다.
+먼저 $$\Lambda_d,\Lambda_t$$ 를 살펴보자. $$A_d, A_t$$ 는 분산의 역인 precision을 [감마분포](https://en.wikipedia.org/wiki/Gamma\_distribution)로부터 추출하는 [Normal gamma distribution](https://en.wikipedia.org/wiki/Normal-gamma\_distribution)이다.
 
-감마 정규 분포에서는 정규분포의 분산의 역인 precision이 감마분포 $$\tau$$에 파라미터인 $$\lambda$$ 를 곱해준 것으로 나타낸다. \($$\frac {1} {\sigma^2}=\lambda\tau$$ \). 그런데 여기선 람다는 1이다
+감마 정규 분포에서는 정규분포의 분산의 역인 precision이 감마분포 $$\tau$$에 파라미터인 $$\lambda$$ 를 곱해준 것으로 나타낸다. ($$\frac {1} {\sigma^2}=\lambda\tau$$ ). 그런데 여기선 람다는 1이다
 
 shape와 scale 파라미터 $$\alpha,\beta$$ 를 가진 감마 분포와 정규분포의 곱은 다음과 같이 표현할 수 있다.
 
@@ -114,7 +114,7 @@ $$
 p(\Lambda_d)= \prod_{i=1} ^{N_d} \prod _{s=1}^{S} \mathbb {G}\bigg(\lambda_{d,s}^i;\alpha_{\lambda}+\frac {1} {2}, (\frac {1} {\beta } + \frac {\lambda (x-u)^2} {2} \bigg )
 $$
 
-$$\alpha_{\lambda} -1 +\frac {1} {2} +1 = \alpha_{\lambda} + \frac {1} {2}$$ 이 되게 된다. \(유도해보기 바란다\)
+$$\alpha_{\lambda} -1 +\frac {1} {2} +1 = \alpha_{\lambda} + \frac {1} {2}$$ 이 되게 된다. (유도해보기 바란다)
 
 $$x$$ 를 몬테카를로 샘플링을 통하여 샘플링하여 변분추론하게 되면,
 
@@ -174,18 +174,17 @@ $$
 
 이를 논문에서는 다음과 같이 표현하고 있다.
 
-![&#xCD9C;&#xCC98;: https://academic.oup.com/bioinformatics/article/28/18/2304/241817 ](../../../.gitbook/assets/m_bts360i8.gif)
+![출처: https://academic.oup.com/bioinformatics/article/28/18/2304/241817 ](../../../.gitbook/assets/m\_bts360i8.gif)
 
 ## Visualization of Pharmacological Space
 
-논문에서는 90%의 약물, 단백질, 상호작용으로 학습을 시키고 나머지 10%를 사용하여 테스트 하였다. Pharmacological space에 $$A_d, A_t$$ 를 이용하여 2차원 pharmacological space에 프로젝션\(매핑\)하면 다음과 같이 보이게 된다.
+논문에서는 90%의 약물, 단백질, 상호작용으로 학습을 시키고 나머지 10%를 사용하여 테스트 하였다. Pharmacological space에 $$A_d, A_t$$ 를 이용하여 2차원 pharmacological space에 프로젝션(매핑)하면 다음과 같이 보이게 된다.
 
-![&#xCD9C;&#xCC98;: https://academic.oup.com/bioinformatics/article/28/18/2304/241817](../../../.gitbook/assets/bts360f2.jpeg)
+![출처: https://academic.oup.com/bioinformatics/article/28/18/2304/241817](../../../.gitbook/assets/bts360f2.jpeg)
 
 점선은 학습에 사용된 상호작용이고 실선은 새로운 상호작용이다. 새로운 약물, 단백질이 Pharmacological space에 잘 매핑 되는 것을 볼 수있다.
 
 ## References
 
-1. Gönen, Mehmet. "[Predicting drug–target interactions from chemical and genomic kernels using Bayesian matrix factorization.](https://academic.oup.com/bioinformatics/article/28/18/2304/241817)" Bioinformatics 28.18 \(2012\): 2304-2310.
-2. Ezzat, Ali, et al. "[Computational prediction of drug–target interactions using chemogenomic approaches: an empirical survey](https://academic.oup.com/bib/article-abstract/20/4/1337/4824712)." Briefings in bioinformatics 20.4 \(2019\): 1337-1357.
-
+1. Gönen, Mehmet. "[Predicting drug–target interactions from chemical and genomic kernels using Bayesian matrix factorization.](https://academic.oup.com/bioinformatics/article/28/18/2304/241817)" Bioinformatics 28.18 (2012): 2304-2310.
+2. Ezzat, Ali, et al. "[Computational prediction of drug–target interactions using chemogenomic approaches: an empirical survey](https://academic.oup.com/bib/article-abstract/20/4/1337/4824712)." Briefings in bioinformatics 20.4 (2019): 1337-1357.
