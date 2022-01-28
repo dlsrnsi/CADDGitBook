@@ -22,7 +22,7 @@
 * [Similarity Measure of Protein](protein-modeling/similarity-measure-of-protein/README.md)
   * [Smith-Waterman algorithm (SW)](protein-modeling/similarity-measure-of-protein/smith-waterman-algorithm-sw.md)
   * [Basic Local Alignment Search Tool (BLAST)](protein-modeling/similarity-measure-of-protein/basic-local-alignment-search-tool-blast.md)
-* [Protein Features](protein-modeling/protein-features/README.md)
+* [Protein Features](protein-modeling/protein-features.md)
   * [Deep Learning Model](protein-modeling/protein-features/deep-learning-model.md)
 
 ## Compound Modeling
@@ -33,7 +33,7 @@
 * [Similarity Measure of Compound](compound-modeling/similarity-measure-of-compound/README.md)
   * [Tanimoto Coefficient](compound-modeling/similarity-measure-of-compound/tanimoto-coefficient.md)
 * [Compound Features](compound-modeling/compound-features/README.md)
-  * [Deep Learning](compound-modeling/compound-features/deep-learning.md)
+  * [Deep Learning Model](compound-modeling/compound-features/deep-learning.md)
 
 ## Machine Learning
 
