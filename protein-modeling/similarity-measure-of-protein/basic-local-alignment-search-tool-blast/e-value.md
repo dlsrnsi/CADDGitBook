@@ -22,7 +22,9 @@ $$
 \frac {1} {\beta}e^{-(x-\mu)/\beta+e^{-(x-\mu)/\beta}}
 $$
 
-$$\frac {1} {\beta} e^{-(x-\mu)/\beta}$$는 쉽게 볼 수 있는 정규분포꼴인데, 지수로 똑같은  $$\frac {1} {\beta} e^{-(x-\mu)/\beta}$$가 하나더 올라가있는 모습이다.
+$$\frac {1} {\beta} e^{-(x-\mu)/\beta}$$는 쉽게 볼 수 있는 정규분포꼴인데, 지수로 똑같은 $$\frac {1} {\beta} e^{-(x-\mu)/\beta}$$가 하나더 올라가있는 모습이다.
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Gumbel-Density.svg/1920px-Gumbel-Density.svg.png)
 
 검벨 분포의 PDF를 그려보면 다음과 같은데 $$μ$$는 최빈값(mode)의 위치(location)를 $$β$$는 분포의 shape(scale)을 결정해주는 것을 볼 수 있으며, maximum값에 대한 분포 답게 오른꼬리분포임을 확인할 수 있다.
 
